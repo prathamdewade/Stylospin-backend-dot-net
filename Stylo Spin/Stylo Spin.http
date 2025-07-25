@@ -1,0 +1,6 @@
+@Stylo_Spin_HostAddress = http://localhost:5005
+
+GET {{Stylo_Spin_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
