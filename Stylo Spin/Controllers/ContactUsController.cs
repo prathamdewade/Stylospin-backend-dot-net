@@ -35,6 +35,7 @@ namespace Stylo_Spin.Controllers
             return Ok(ApiResponse<string>.SuccessResponse("Contact deleted successfully"));
         }
         [HttpGet("get-all")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllContacts()
         {
             var contacts = await _service.GetAllAsync();

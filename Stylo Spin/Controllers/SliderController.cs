@@ -8,7 +8,7 @@ namespace Stylo_Spin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
+    [Authorize]
     public class SliderController : ControllerBase
     {
         private readonly ISliderService _service;
@@ -20,6 +20,7 @@ namespace Stylo_Spin.Controllers
 
         // POST: api/Slider/add
         [HttpPost("add")]
+
         public async Task<IActionResult> AddSlider([FromForm] SliderDto dto)
         {
             if (dto.Image == null)
@@ -33,6 +34,7 @@ namespace Stylo_Spin.Controllers
 
         // GET: api/Slider/list
         [HttpGet("list")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllSliders()
         {
             var sliders = await _service.GetAllSlidersAsync();
@@ -41,6 +43,7 @@ namespace Stylo_Spin.Controllers
 
         // GET: api/Slider/get/5
         [HttpGet("get/{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetSliderById(int id)
         {
             try

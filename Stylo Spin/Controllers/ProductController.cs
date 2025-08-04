@@ -9,6 +9,7 @@ namespace Stylo_Spin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
  
     public class ProductController : ControllerBase
     {

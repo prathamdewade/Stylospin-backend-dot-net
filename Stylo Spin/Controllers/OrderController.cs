@@ -20,6 +20,7 @@ namespace Stylo_Spin.Controllers
         // --- Order Endpoints (already implemented) ---
 
         [HttpGet("GetAllOrders")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllOrders()
         {
             var orders = await _customerOrderService.GetAllOrdersAsync();
@@ -27,6 +28,7 @@ namespace Stylo_Spin.Controllers
         }
 
         [HttpGet("GetOrderById/{orderId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetOrderById(int orderId)
         {
             var order = await _customerOrderService.GetOrderByIdAsync(orderId);
@@ -54,6 +56,7 @@ namespace Stylo_Spin.Controllers
         // --- Customer Endpoints ---
 
         [HttpGet("GetAllCustomers")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCustomers()
         {
             var customers = await _customerOrderService.GetAllCustomerOrdersAsync();
@@ -61,6 +64,7 @@ namespace Stylo_Spin.Controllers
         }
 
         [HttpGet("GetCustomerById/{customerId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetCustomerById(int customerId)
         {
             var customer = await _customerOrderService.GetCustomerByIdAsync(customerId);

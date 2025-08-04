@@ -42,6 +42,7 @@ namespace Stylo_Spin.Controllers
         [HttpGet("GetAll")]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<TblCategory>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<string>), StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCategories()
         {
             var categories = await _service.GetAllCategoriesAsync();
